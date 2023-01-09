@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:nike_sneaker_store_app/Constants/colors.dart';
 import 'package:nike_sneaker_store_app/OnBoardingScreens/on_borading_screen.dart';
 
-class OnBoardingScreen2 extends StatefulWidget {
-  const OnBoardingScreen2({Key? key}) : super(key: key);
+class OnBoardingScreen3 extends StatefulWidget {
+  const OnBoardingScreen3({Key? key}) : super(key: key);
 
   @override
-  State<OnBoardingScreen2> createState() => _OnBoardingScreen2State();
+  State<OnBoardingScreen3> createState() => _OnBoardingScreen3State();
 }
 
-class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
+class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +29,8 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
               child: Image.asset('assets/images/Spring_prev_ui 1.png'),
             ),
             Positioned(
-              top: 80.0,
+              top: 100.0,
               left: 30,
-              child: Image.asset('assets/icons/Vector (14).png'),
-            ),
-            Positioned(
-              top: 70.0,
-              right: 30,
               child: Image.asset('assets/icons/Vector (12).png'),
             ),
             Center(
@@ -46,7 +41,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
                       top: 420.0,
                     ),
                     child: Text(
-                      'Let"s Start Journey\nWith Nike',
+                      'You Have the\nPower To',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
@@ -60,7 +55,7 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
                       bottom: 35.0,
                     ),
                     child: Text(
-                      'Smart, Gorgeous & Fashionable\nCollection Explor Now',
+                      'There Are Many Beautiful And Attractive\nPlants To Your Room',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,

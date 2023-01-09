@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nike_sneaker_store_app/Constants/colors.dart';
-import 'package:nike_sneaker_store_app/OnBoardingScreens/on_borading_screen.dart';
+import 'package:nike_sneaker_store_app/SignIn/sign_in.dart';
+
+import 'OnBoardingScreens/Components/on_boarding_screen_2.dart';
+import 'OnBoardingScreens/Components/on_boarding_screen_3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Nike Sneakers Store App',
       theme: ThemeData(),
-      home: const OnBoardingScreen(),
+      home: const SignInScreen(),
     );
   }
 }
