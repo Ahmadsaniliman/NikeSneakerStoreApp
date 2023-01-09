@@ -11,6 +11,7 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
+    // int _index = 0;
     return Scaffold(
       body: Container(
         height: double.infinity,
@@ -50,7 +51,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                   Image.asset('assets/icons/www.png'),
                   Image.asset('assets/icons/Vector (12).png'),
-                  const SizedBox(height: 440.0),
+                  const SizedBox(height: 300.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ...List.generate(
+                        3,
+                        (index) => ChangeRoller(
+                          index: index,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 140.0),
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 25.0,
@@ -68,7 +81,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         child: Text('Get Started'),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
@@ -79,27 +92,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 }
 
+class ChangeRoller extends StatelessWidget {
+  const ChangeRoller({
+    Key? key,
+    required this.index,
+  }) : super(key: key);
+  final int index;
+  final selectedOne = 0;
 
-// Center(
-//               child: Column(
-//                 children: [
-//                   Padding(
-//                     padding: const EdgeInsets.only(
-//                       bottom: 20.0,
-//                       top: 80.0,
-//                     ),
-//                     child: Image.asset('assets/icons/Wellcome To Nike.png'),
-//                   ),
-//                   Image.asset('assets/icons/www.png'),
-//                   Stack(
-//                     children: [
-//                       Positioned(
-//                         top: 60.0,
-//                         left: 50.0,
-//                         child: Image.asset('assets/icons/Vector (12).png'),
-//                       ),
-//                     ],
-//                   ),
-//                 ],
-//               ),
-//             ),
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(right: 10.0),
+      height: 6.0,
+      width: 25.0,
+      decoration: BoxDecoration(
+        color: selectedOne == index ? Colors.black26 : Colors.yellow,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+    );
+  }
+}
