@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../Constants/colors.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 25.0,
-          horizontal: 20.0,
+        padding: const EdgeInsets.only(
+          //   vertical: 25.0,
+          //   horizontal: 20.0,
+          top: 25.0, left: 20.0, right: 20.0,
         ),
         child: SafeArea(
           child: Column(
@@ -29,7 +30,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               //
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 10.0),
               Center(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,6 +63,25 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Text('Your Name'),
+                    const SizedBox(height: 10.0),
+                    Container(
+                      height: 50.0,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: thirdLightColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: const TextField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: '*******',
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 20.0),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10.0),
                     const Text('Email Address'),
                     const SizedBox(height: 10.0),
                     Container(
@@ -80,7 +100,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20.0),
+                    const SizedBox(height: 10.0),
                     const Text('Password'),
                     const SizedBox(height: 10.0),
                     Container(
@@ -102,20 +122,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: 8.0,
-                        bottom: 20.0,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
-                          SizedBox(),
-                          Text('Recovery Password'),
-                        ],
-                      ),
-                    ),
-                    // Text
+                    const SizedBox(height: 20.0),
                     Container(
                       height: 50.0,
                       width: double.infinity,
@@ -124,14 +131,14 @@ class SignInScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       child: const Center(
-                        child: Text('Sign In'),
+                        child: Text('Sign Up'),
                       ),
                     ),
                     GestureDetector(
                       child: Padding(
                         padding: const EdgeInsets.only(
                           top: 20,
-                          bottom: 110.0,
+                          bottom: 70.0,
                         ),
                         child: Container(
                           height: 50.0,
@@ -149,9 +156,9 @@ class SignInScreen extends StatelessWidget {
                               ),
                               const Text(
                                 'Sign In With Google',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
+                                // style: TextStyle(
+                                //   color: Colors.white,
+                                // ),
                               ),
                             ],
                           ),
@@ -164,11 +171,11 @@ class SignInScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text('New User ?'),
+                        const Text('Already Have Account ?'),
                         const SizedBox(width: 10.0),
                         GestureDetector(
                           child: const Text(
-                            'Create Account',
+                            'Log In',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
