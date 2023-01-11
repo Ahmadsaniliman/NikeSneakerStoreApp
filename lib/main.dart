@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_sneaker_store_app/Constants/colors.dart';
-import 'package:nike_sneaker_store_app/ForgotPassword/forgot_password.dart';
-import 'package:nike_sneaker_store_app/Register/register.dart';
+import 'package:nike_sneaker_store_app/HomePage/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Nike Sneakers Store App',
       theme: ThemeData(),
-      home: const ForgotPasswordScreen(),
+      home: const HomeScreen(),
     );
   }
 }

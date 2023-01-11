@@ -79,38 +79,7 @@ class ForgotPasswordScreen extends StatelessWidget {
 
               GestureDetector(
                 onTap: () async {
-                  await showDialog(
-                    context: context,
-                    builder: (context) => AboutDialog(),
-                    // Container(
-                    //   padding: const EdgeInsets.symmetric(
-                    //     vertical: 20.0,
-                    //     horizontal: 20.0,
-                    //   ),
-                    //   height: 100.0,
-                    //   width: double.infinity,
-                    //   decoration: BoxDecoration(
-                    //     color: Colors.white,
-                    //     borderRadius: BorderRadius.circular(10.0),
-                    //   ),
-                    //   child: Column(
-                    //     children: [
-                    //       Container(
-                    //         height: 40.0,
-                    //         width: 40.0,
-                    //         decoration: BoxDecoration(
-                    //           color: Colors.blue,
-                    //           borderRadius: BorderRadius.circular(20.0),
-                    //         ),
-                    //         child: Image.asset('asdsets/images/.png'),
-                    //       ),
-                    //       const Text('Check Your Email'),
-                    //       const Text(
-                    //           'We Have Send Passsword Recovery\nCode Your Email'),
-                    //     ],
-                    //   ),
-                    // ),
-                  );
+                  //   await AboutDialog();
                 },
                 child: Container(
                   height: 50.0,
@@ -131,3 +100,33 @@ class ForgotPasswordScreen extends StatelessWidget {
     );
   }
 }
+
+
+// Container(
+//                       padding: const EdgeInsets.symmetric(
+//                         vertical: 20.0,
+//                         horizontal: 20.0,
+//                       ),
+//                       height: 100.0,
+//                       width: double.infinity,
+//                       decoration: BoxDecoration(
+//                         color: Colors.white,
+//                         borderRadius: BorderRadius.circular(10.0),
+//                       ),
+//                       child: Column(
+//                         children: [
+//                           Container(
+//                             height: 40.0,
+//                             width: 40.0,
+//                             decoration: BoxDecoration(
+//                               color: Colors.blue,
+//                               borderRadius: BorderRadius.circular(20.0),
+//                             ),
+//                             child: Image.asset('asdsets/images/.png'),
+//                           ),
+//                           const Text('Check Your Email'),
+//                           const Text(
+//                               'We Have Send Passsword Recovery\nCode Your Email'),
+//                         ],
+//                       ),
+//                     ),
