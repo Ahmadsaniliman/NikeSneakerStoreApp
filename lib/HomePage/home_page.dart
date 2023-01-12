@@ -145,16 +145,62 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                     Container(
-                      padding: const EdgeInsets.all(10.0),
-                      height: 170.0,
+                      padding: const EdgeInsets.only(
+                        top: 10.0,
+                        // bottom: 10,
+                        left: 10.0,
+                      ),
+                      height: 180.0,
                       width: 170.0,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: Column(
+                      child: Stack(
                         children: [
                           Image.asset('assets/icons/Vector (19).png'),
+                          Positioned(
+                            // top: 20.0,
+                            child: Image.asset(
+                                'assets/images/PngItem_5550642 (2) 2.png'),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Best Skiller',
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                  ),
+                                ),
+                                const SizedBox(height: 05.0),
+                                const Text(
+                                  'Nike Jordan',
+                                ),
+                                Row(
+                                  children: [
+                                    const Text('\$302.2'),
+                                    const SizedBox(width: 80.0),
+                                    Container(
+                                      height: 30.0,
+                                      width: 30.0,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.blue,
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(10.0),
+                                          bottomRight: Radius.circular(10.0),
+                                        ),
+                                      ),
+                                      child: const Icon(Icons.add,
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
                     )
