@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneaker_store_app/Model/model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -144,72 +145,91 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    Container(
-                      padding: const EdgeInsets.only(
-                        top: 10.0,
-                        // bottom: 10,
-                        left: 10.0,
+                    SizedBox(
+                      height: 200.0,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: popularProducts.length,
+                        itemBuilder: (context, index) => PopularProducts(
+                          product: popularProducts[index],
+                        ),
                       ),
-                      height: 180.0,
-                      width: 170.0,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Stack(
-                        children: [
-                          Image.asset('assets/icons/Vector (19).png'),
-                          Positioned(
-                            // top: 20.0,
-                            child: Image.asset(
-                                'assets/images/PngItem_5550642 (2) 2.png'),
-                          ),
-                          Positioned(
-                            bottom: 0,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Best Skiller',
-                                  style: TextStyle(
-                                    color: Colors.blue,
-                                  ),
-                                ),
-                                const SizedBox(height: 05.0),
-                                const Text(
-                                  'Nike Jordan',
-                                ),
-                                Row(
-                                  children: [
-                                    const Text('\$302.2'),
-                                    const SizedBox(width: 80.0),
-                                    Container(
-                                      height: 30.0,
-                                      width: 30.0,
-                                      decoration: const BoxDecoration(
-                                        color: Colors.blue,
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(10.0),
-                                          bottomRight: Radius.circular(10.0),
-                                        ),
-                                      ),
-                                      child: const Icon(Icons.add,
-                                          color: Colors.white),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
+                    ),
                   ],
                 ),
               )
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class PopularProducts extends StatelessWidget {
+  const PopularProducts({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
+  final PopularProduct product;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(right: 15.0),
+      padding: const EdgeInsets.only(
+        top: 10.0,
+        // bottom: 10,
+        left: 10.0,
+      ),
+      height: 180.0,
+      width: 150.0,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Stack(
+        children: [
+          Image.asset('assets/icons/Vector (19).png'),
+          Positioned(
+            // top: 20.0,
+            child: Image.asset(product.image),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  product.name,
+                  style: const TextStyle(
+                    color: Colors.blue,
+                  ),
+                ),
+                const SizedBox(height: 05.0),
+                Text(product.title),
+                Row(
+                  children: [
+                    Text(product.price),
+                    const SizedBox(width: 50.0),
+                    Container(
+                      height: 30.0,
+                      width: 30.0,
+                      decoration: const BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10.0),
+                          bottomRight: Radius.circular(10.0),
+                        ),
+                      ),
+                      child: const Icon(Icons.add, color: Colors.white),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
