@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nike_sneaker_store_app/Constants/colors.dart';
+import 'package:nike_sneaker_store_app/Details/details.dart';
+import 'package:nike_sneaker_store_app/Favourite/favourite.dart';
 import 'package:nike_sneaker_store_app/HomePage/home_page.dart';
 
 void main() {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Nike Sneakers Store App',
       theme: ThemeData(),
-      home: const HomeScreen(),
+      home: const FavouriteScreen(),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nike_sneaker_store_app/Constants/colors.dart';
 import 'package:nike_sneaker_store_app/Model/model.dart';
+// import 'package:nike_sneaker_store_app/';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+//      int _page = 0;
+//   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   int selectedOne = 0;
   @override
   Widget build(BuildContext context) {
@@ -19,6 +23,18 @@ class _HomeScreenState extends State<HomeScreen> {
       'Tenis',
     ];
     return Scaffold(
+      backgroundColor: secondWhiteColor,
+//     bottomNavigationBar: CurvedNavigationBar(
+//     backgroundColor: Colors.blueAccent,
+//     items: const [
+//       Icon(Icons.add, size: 30),
+//       Icon(Icons.list, size: 30),
+//       Icon(Icons.compare_arrows, size: 30),
+//     ],
+//     onTap: (index) {
+//       //Handle button tap
+//     },
+//   ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -63,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         shape: BoxShape.circle,
                         color: Colors.blue,
                       ),
+                      child: Image.asset('assets/images/sliders.png'),
                     ),
                   ],
                 ),
@@ -157,7 +174,74 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-              )
+              ),
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'New Arrivals',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'See all',
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ],
+                    ),
+                  ),
+                  //
+                  SizedBox(
+                    height: 110.0,
+                    width: double.infinity,
+                    child: Stack(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(
+                            top: 20.0,
+                            left: 20.0,
+                          ),
+                          height: 90.0,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(
+                              15.0,
+                            ),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Summer Sale',
+                                style: TextStyle(fontSize: 13.0),
+                              ),
+                              const SizedBox(height: 5.0),
+                              Image.asset('assets/images/15% OFF.png'),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          top: -20,
+                          right: 0,
+                          child: Image.asset(
+                            'assets/images/Spring_prev_ui 1.png',
+                            width: 150.0,
+                          ),
+                        ),
+                        Positioned(
+                          top: 30.0,
+                          right: 110.0,
+                          child: Image.asset('assets/images/Misc_06.png'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -183,14 +267,16 @@ class PopularProducts extends StatelessWidget {
         left: 10.0,
       ),
       height: 180.0,
-      width: 150.0,
+      width: 155.0,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Stack(
         children: [
-          Image.asset('assets/icons/Vector (19).png'),
+          Image.asset(
+            'assets/icons/Vector (19).png',
+          ),
           Positioned(
             // top: 20.0,
             child: Image.asset(product.image),
@@ -211,7 +297,7 @@ class PopularProducts extends StatelessWidget {
                 Row(
                   children: [
                     Text(product.price),
-                    const SizedBox(width: 50.0),
+                    const SizedBox(width: 60.0),
                     Container(
                       height: 30.0,
                       width: 30.0,
