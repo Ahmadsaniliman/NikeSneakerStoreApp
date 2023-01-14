@@ -1,51 +1,74 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_sneaker_store_app/Constants/colors.dart';
 import 'package:nike_sneaker_store_app/Model/model.dart';
 
-class FavouriteScreen extends StatelessWidget {
+class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({Key? key}) : super(key: key);
 
+  @override
+  State<FavouriteScreen> createState() => _FavouriteScreenState();
+}
+
+class _FavouriteScreenState extends State<FavouriteScreen> {
+//   final int _page = 0;
+//   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: secondWhiteColor,
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.blueAccent,
+        items: const [
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+        ],
+        onTap: (index) {
+          //Handle button tap
+        },
+      ),
       body: Padding(
         padding: const EdgeInsets.only(
           top: 30.0,
           left: 15.0,
-          right: 15.0,
+          //   right: 15.0,
         ),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  child: Container(
-                    height: 40.0,
-                    width: 40.0,
-                    decoration: BoxDecoration(
-                      color: thirdColor.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Image.asset('assets/icons/Vector 175 (Stroke).png'),
-                  ),
-                ),
-                const Text('Favourite'),
-                GestureDetector(
-                  child: Container(
-                    height: 40.0,
-                    width: 40.0,
-                    decoration: BoxDecoration(
-                      color: thirdColor.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Image.asset(
-                      'assets/icons/Path.png',
+            Padding(
+              padding: const EdgeInsets.only(right: 15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    child: Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: thirdColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child:
+                          Image.asset('assets/icons/Vector 175 (Stroke).png'),
                     ),
                   ),
-                ),
-              ],
+                  const Text('Favourite'),
+                  GestureDetector(
+                    child: Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: thirdColor.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Image.asset(
+                        'assets/icons/Path.png',
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
 
             //
@@ -53,9 +76,9 @@ class FavouriteScreen extends StatelessWidget {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
-                  childAspectRatio: 0.85,
+                  //   crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 20.0,
+                  childAspectRatio: 0.95,
                 ),
                 itemCount: popularProducts.length,
                 itemBuilder: (context, index) => PopularProductsF(
@@ -70,17 +93,6 @@ class FavouriteScreen extends StatelessWidget {
   }
 }
 
-//  SizedBox(
-//                       height: 200.0,
-//                       child: ListView.builder(
-//                         scrollDirection: Axis.horizontal,
-//                         itemCount: popularProducts.length,
-//                         itemBuilder: (context, index) => PopularProducts(
-//                           product: popularProducts[index],
-//                         ),
-//                       ),
-//                     ),
-
 class PopularProductsF extends StatelessWidget {
   const PopularProductsF({
     Key? key,
@@ -94,11 +106,12 @@ class PopularProductsF extends StatelessWidget {
       margin: const EdgeInsets.only(right: 15.0),
       padding: const EdgeInsets.only(
         top: 10.0,
-        // bottom: 10,
+        bottom: 10,
         left: 10.0,
+        right: 10.0,
       ),
       height: 180.0,
-      width: 155.0,
+      width: 165.0,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10.0),
@@ -106,7 +119,7 @@ class PopularProductsF extends StatelessWidget {
       child: Stack(
         children: [
           Image.asset(
-            'assets/icons/Vector (19).png',
+            'assets/icons/Vector (20).png',
           ),
           Positioned(
             // top: 20.0,
@@ -128,18 +141,27 @@ class PopularProductsF extends StatelessWidget {
                 Row(
                   children: [
                     Text(product.price),
-                    const SizedBox(width: 60.0),
-                    Container(
-                      height: 30.0,
-                      width: 30.0,
-                      decoration: const BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10.0),
-                          bottomRight: Radius.circular(10.0),
+                    const SizedBox(width: 35.0),
+                    Row(
+                      children: [
+                        Container(
+                          height: 20.0,
+                          width: 20.0,
+                          decoration: const BoxDecoration(
+                            color: Colors.blue,
+                            shape: BoxShape.circle,
+                          ),
                         ),
-                      ),
-                      child: const Icon(Icons.add, color: Colors.white),
+                        const SizedBox(width: 10.0),
+                        Container(
+                          height: 20.0,
+                          width: 20.0,
+                          decoration: const BoxDecoration(
+                            color: Colors.red,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
